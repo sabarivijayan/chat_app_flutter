@@ -89,7 +89,7 @@ class _ChatPageState extends State<ChatPage> {
     return StreamBuilder(
         stream: _chatService.getMessages(senderID, widget.receiverID),
         builder: (context, snapshot) {
-          if (!snapshot.hasError) {
+          if (snapshot.hasError) {
             return const Text("Error");
           }
 
